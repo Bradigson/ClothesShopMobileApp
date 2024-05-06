@@ -1,9 +1,6 @@
 import 'package:clothes_shop/models/clothes.shop.model.dart';
 import 'package:clothes_shop/services/clothes.shop.service.dart';
 import 'package:clothes_shop/services/home.icons.dart';
-import 'package:clothes_shop/widgets/clothes.shop.appbar.dart';
-import 'package:clothes_shop/widgets/clothes.shop.footer.dart';
-import 'package:clothes_shop/widgets/clothes.shop.menu.dart';
 import 'package:flutter/material.dart';
 
 class ClothesShopHome extends StatefulWidget {
@@ -73,8 +70,8 @@ class _ClothesShopHome extends State<ClothesShopHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ClothesShopAppBar(),
-      endDrawer: const ClothesShopMenus(),
+      // appBar: const ClothesShopAppBar(),
+      // endDrawer: const ClothesShopMenus(),
       body: Column(
         children: [
           //input to search
@@ -243,7 +240,7 @@ class _ClothesShopHome extends State<ClothesShopHome> {
           ),
         ],
       ),
-      bottomNavigationBar: const ClothesShopFooter(),
+      //bottomNavigationBar: const ClothesShopFooter(),
     );
   }
 }
