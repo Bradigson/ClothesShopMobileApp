@@ -67,6 +67,10 @@ class _ClothesShopHome extends State<ClothesShopHome> {
     });
   }
 
+  void handleNavigate(int id) {
+    Navigator.pushNamed(context, '/view', arguments: id);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,6 +170,7 @@ class _ClothesShopHome extends State<ClothesShopHome> {
                     String price = displayedAllLivingRoomProducts![index].price;
                     if (displayedAllLivingRoomProducts != null) {
                       return GestureDetector(
+                        onTap: () => handleNavigate(index),
                         child: Container(
                           padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
                           //color: Colors.red,
@@ -203,7 +208,9 @@ class _ClothesShopHome extends State<ClothesShopHome> {
                                         Align(
                                           alignment: Alignment.centerLeft,
                                           child: Text(
-                                            displayedAllLivingRoomProducts![index].name,
+                                            displayedAllLivingRoomProducts![
+                                                    index]
+                                                .name,
                                             style: const TextStyle(
                                                 color: Colors.black54,
                                                 fontSize: 19,

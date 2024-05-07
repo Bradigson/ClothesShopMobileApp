@@ -1,5 +1,6 @@
 import 'package:clothes_shop/screens/clothes.shop.presentation.dart';
 import 'package:clothes_shop/screens/clothes.shop.screen.dart';
+import 'package:clothes_shop/screens/clothes.shop.view.products.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -21,6 +22,7 @@ class ClothesShopApplication extends StatelessWidget {
       routes: {
         '/':(context)=> const ClothesShopPresentation(),
         '/home':(context)=> const ClothesShopScreen(),
+        '/view':(context)=> const ClothesShoppViewProdusct()
       },
       
     );
