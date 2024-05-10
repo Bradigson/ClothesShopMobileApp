@@ -71,7 +71,7 @@ class _ClothesShoppViewProdusct extends State<ClothesShoppViewProdusct> {
   Widget build(BuildContext context) {
     final parametro = ModalRoute.of(context)?.settings.arguments as int;
 
-    if (parametro == null ||
+    if (
         displayedAllLivingRoomProducts == null ||
         parametro < 0 ||
         parametro >= displayedAllLivingRoomProducts!.length) {

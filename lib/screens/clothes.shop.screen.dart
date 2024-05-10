@@ -1,7 +1,6 @@
 import 'package:clothes_shop/screens/clothes.shop.favorite.dart';
 import 'package:clothes_shop/screens/clothes.shop.home.dart';
 import 'package:clothes_shop/screens/clothes.shop.new.products.dart';
-import 'package:clothes_shop/screens/clothes.shop.setting.dart';
 import 'package:clothes_shop/widgets/clothes.shop.appbar.dart';
 import 'package:clothes_shop/widgets/clothes.shop.menu.dart';
 import 'package:flutter/material.dart';
@@ -19,20 +18,22 @@ class _ClothesShopScreen extends State<ClothesShopScreen> {
     const ClothesShopHome(),
     const ClothesShopFavorite(),
     const ClothesShopNewProducts(),
-    const ClothesShopSetting()
-
   ];
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      if (index < 3) {
+        _selectedIndex = index;
+      } else {
+        Navigator.pushNamed(context, '/setting');
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  ClothesShopAppBar(),
+      appBar: const ClothesShopAppBar(),
       endDrawer: const ClothesShopMenus(),
       body: routes[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

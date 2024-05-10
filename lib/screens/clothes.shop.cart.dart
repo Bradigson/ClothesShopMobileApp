@@ -39,6 +39,7 @@ class _ClothesShopCart extends State<ClothesShopCart> {
     setState(() {
       cart.clear();
       totelToPay = 0;
+      Navigator.pushNamed(context, '/home');
     });
   }
 
@@ -94,49 +95,54 @@ class _ClothesShopCart extends State<ClothesShopCart> {
           );
         },
       ),
-      bottomNavigationBar: cart.length > 0 ?  BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 340,
-              height: 55,
-              child: ElevatedButton(
-                onPressed: () {
-                  AwesomeDialog(
-                    context: context,
-                    dialogType: DialogType.info,
-                    buttonsBorderRadius: const BorderRadius.all(
-                      Radius.circular(2),
+      bottomNavigationBar: cart.length > 0
+          ? BottomAppBar(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 340,
+                    height: 55,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.info,
+                          buttonsBorderRadius: const BorderRadius.all(
+                            Radius.circular(2),
+                          ),
+                          dismissOnTouchOutside: true,
+                          dismissOnBackKeyPress: false,
+                          headerAnimationLoop: false,
+                          animType: AnimType.bottomSlide,
+                          desc:
+                              'Confirm if you are ready to make your purchase.',
+                          showCloseIcon: true,
+                          btnCancelOnPress: () {},
+                          btnOkOnPress: handleBuyProducts,
+                        ).show();
+                      },
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.amber),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(13)),
+                            ),
+                          )),
+                      child: const Text("Buy",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)),
                     ),
-                    dismissOnTouchOutside: true,
-                    dismissOnBackKeyPress: false,
-                    headerAnimationLoop: false,
-                    animType: AnimType.bottomSlide,
-                    desc: 'Confirm if you are ready to make your purchase.',
-                    showCloseIcon: true,
-                    btnCancelOnPress: () {},
-                    btnOkOnPress: handleBuyProducts,
-                  ).show();
-                },
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.amber),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(13)),
-                      ),
-                    )),
-                child: const Text("Buy",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
+                  )
+                ],
               ),
             )
-          ],
-        ),
-      ) : null,
+          : null,
     );
   }
 }
