@@ -32,7 +32,7 @@ class _ClothesShopScreen extends State<ClothesShopScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ClothesShopAppBar(),
+      appBar:  ClothesShopAppBar(),
       endDrawer: const ClothesShopMenus(),
       body: routes[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

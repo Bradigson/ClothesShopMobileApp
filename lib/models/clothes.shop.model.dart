@@ -46,3 +46,6 @@ class ClothesShopModelLivingRoom {
         "userupdated": userupdated
       };
 }
+
+
+List<ClothesShopModelLivingRoom> cart = [];

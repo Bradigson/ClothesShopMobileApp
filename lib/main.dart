@@ -1,3 +1,4 @@
+import 'package:clothes_shop/screens/clothes.shop.cart.dart';
 import 'package:clothes_shop/screens/clothes.shop.presentation.dart';
 import 'package:clothes_shop/screens/clothes.shop.screen.dart';
 import 'package:clothes_shop/screens/clothes.shop.view.products.dart';
@@ -22,7 +23,8 @@ class ClothesShopApplication extends StatelessWidget {
       routes: {
         '/':(context)=> const ClothesShopPresentation(),
         '/home':(context)=> const ClothesShopScreen(),
-        '/view':(context)=> const ClothesShoppViewProdusct()
+        '/view':(context)=> const ClothesShoppViewProdusct(),
+        '/cart':(context)=> const ClothesShopCart()
       },
       
     );

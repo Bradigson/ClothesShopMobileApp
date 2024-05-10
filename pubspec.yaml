@@ -39,6 +39,8 @@ dependencies:
   flutter_dotenv: ^5.1.0
   http: ^1.2.1
   cached_network_image: ^3.3.1
+  badges: ^3.1.2
+  awesome_dialog: ^3.2.1
 
 dev_dependencies:
   flutter_test:
