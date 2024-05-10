@@ -43,6 +43,12 @@ class _ClothesShopCart extends State<ClothesShopCart> {
     });
   }
 
+  void handleDeleteFromCart(dynamic id) {
+    setState(() {
+      cart.remove(id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,7 +96,9 @@ class _ClothesShopCart extends State<ClothesShopCart> {
                 ),
               ),
               title: Text(cart[index].name),
-              trailing: const Icon(Icons.delete_outline, color: Colors.red),
+              trailing: GestureDetector(
+                  onTap: () => handleDeleteFromCart(cart[index]),
+                  child: const Icon(Icons.delete_outline, color: Colors.red)),
             ),
           );
         },
